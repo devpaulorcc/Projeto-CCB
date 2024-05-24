@@ -1,0 +1,153 @@
+:root{
+    --primary-color: #ffffff;
+    --secondary-color: #efefef;
+    --opposite-color: #000000;
+    --search-color: #004FFF;
+    --modal-color: #adadad
+}
+
+.modal-background{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--opposite-color);
+    z-index: 1;
+    position: fixed;
+    opacity: 70%;
+}
+
+button{
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modal-login{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    height: 30rem;
+    width: 25rem;
+    padding: 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+.opacity-element{
+    opacity: 30%;
+}
+
+.modal-info{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 600;
+    margin:  0.5rem 0;
+}
+
+.modal-info-person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-info-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px var(--opposite-color) solid;
+    height: 100%;
+    width: auto;
+}
+
+.modal-info-icon > img {
+    width: 100%;
+    padding: 4.5rem 2.5rem;
+}
+
+
+.modal-choice{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.modal-choice > button {
+    padding: 0.5rem 5.5rem;
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+    border: 0;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modal-choice > button:hover{
+    background-color: var(--primary-color);
+    color: var(--opposite-color);
+}
+
+.modal-info-person > p{
+    border: 2px var(--opposite-color) solid;
+    padding: 0.5rem;
+    /* padding: 1rem 4rem; */
+    width: 150px;
+    text-align: center;
+}
+
+.modal-last-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal-button{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.modal-button > button{
+    background-color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border: 1px var(--opposite-color) solid;
+}
+
+.modal-button > button:hover{
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+}
+
+#modal-button-delete{
+    background-color: #FF4545;
+}
+
+#modal-button-delete:hover{
+    background-color: #FD1818;
+}
+
+#modal-button-back{
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    width: 20vw;
+    border: 1px var(--opposite-color) solid;
+}
+
+#modal-button-back:hover{
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+}

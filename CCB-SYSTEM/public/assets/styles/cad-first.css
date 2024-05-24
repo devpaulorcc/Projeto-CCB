@@ -1,0 +1,128 @@
+header{
+    gap: 1vw;
+}
+header h1, h2{
+    font-size: 20px;
+}
+
+main h1{
+    background-color: var(--oppositeColor);
+    color: var(--primaryColor);
+    width: 70%;
+    font-size: 20px;
+    height: 6vh;
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5vh;
+    gap: 5vh;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-enviar{
+    margin-top: 6vh;
+    background-color: var(--oppositeColor);
+    color: var(--primaryColor);
+}
+.btn-enviar:hover{
+    background-color: var(--secundaryColor);
+    transition: 0.5s;
+    color: var(--oppositeColor);
+    border: 1.8px solid var(--oppositeColor);
+}
+.btn-voltar{
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.btn-voltar:hover{
+    background-color: var(--oppositeColor);
+    transition: 0.5s;
+    color: var(--primaryColor);
+    border: 1.8px solid var(--oppositeColor);
+}
+
+.btn-enviar, .btn-voltar{
+    cursor: pointer;
+    width: 60%;
+    height: 6vh;
+    font-weight: 500;
+}
+
+
+.container-box{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    right: 0;
+    margin: auto;
+    gap: 4.5vw;
+    justify-content: space-between;
+    width: 70%;
+}
+
+label{
+    text-align: start;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.container-num-cep{
+    display: flex;
+    gap: 7vw;
+    flex-direction: row;
+}
+
+.container-num-cep-item{
+    display: flex;
+    flex-direction: column;
+}
+.container-num-cep input{
+    width: 100px;
+}
+
+
+.container-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+input, select{
+    width: 20vw;
+    height: 5vh;
+}
+select{
+    cursor: pointer;
+}
+
+input[type="file"]{
+    display: none;
+}
+.upload{
+    background-color: var(--primaryColor);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border: 1.8px solid var(--oppositeColor); 
+}
+.upload:hover{
+    background-color: var(--oppositeColor);
+    transition: 0.5s;
+    color: var(--secundaryColor);
+}

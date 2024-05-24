@@ -1,0 +1,139 @@
+header{
+    gap: 1vw;
+}
+header h1, h2{
+    font-size: 20px;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-box{
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    margin-top: 5vh;
+}
+
+.dispvolun{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    gap: 2vh;
+}
+
+.dispvolun h1{
+    background-color: var(--oppositeColor);
+    color: var(--primaryColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+    height: 6vh;
+    width: 29vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dispvolun label{
+    width: 29vw;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.dispvolun input{
+    width: 29vw;
+    height: 5vh;
+}
+
+.epis{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.epis h1{
+    background-color: var(--oppositeColor);
+    color: var(--primaryColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+    height: 6vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.epis-itens{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.5vh;
+    width: 50vw;
+}
+
+.epi-lacuna1{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.epi-lacuna1 select, .epi-lacuna2 select{
+    width: 20vw;
+    height: 5vh;
+    cursor: pointer;
+}
+
+.epi-lacuna1 label, .epi-lacuna2 label{
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.epi-lacuna2{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.btn-enviar{
+    margin-top: 6vh;
+    background-color: var(--oppositeColor);
+    color: var(--primaryColor);
+    cursor: pointer;
+    width: 70.6%;
+    height: 6vh;
+    font-weight: 500;
+}
+.btn-enviar:hover{
+    background-color: var(--secundaryColor);
+    transition: 0.5s;
+    color: var(--oppositeColor);
+    border: 1.8px solid var(--oppositeColor);
+}
+.btn-voltar{
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 3vh;
+    cursor: pointer;
+    width: 60%;
+    height: 6vh;
+    font-weight: 500;
+}
+.btn-voltar:hover{
+    background-color: var(--oppositeColor);
+    transition: 0.5s;
+    color: var(--primaryColor);
+    border: 1.8px solid var(--oppositeColor);
+}

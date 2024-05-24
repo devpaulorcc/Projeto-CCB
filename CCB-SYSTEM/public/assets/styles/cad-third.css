@@ -1,0 +1,134 @@
+:root{
+    --primary-color: #ffffff;
+    --secondary-color: #efefef;
+    --opposite-color: #000000;
+    --search-color: #004FFF;
+    --modal-color: #adadad
+}
+
+body{
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    height: 8vh;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    border: 1px var(--opposite-color) solid;
+}
+
+
+header h1, h2{
+    font-size: 20px;
+}
+
+nav{
+    display: flex;
+    margin: 4px;
+}
+
+.main-title{
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+    width: 80%;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    margin-bottom: 5%;
+    margin-top: 5vh;
+}
+
+.main-title > h1 {
+    font-size: larger;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: relative;
+}
+
+
+
+#class-title{
+    display: flex;
+    position: fixed;
+    top: 4rem;
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+    padding: 1rem;
+    width: 50vw;
+    justify-content: center;
+}
+
+#class-title > h1 {
+    font-size: larger;
+}
+
+table {
+    height: 40vh;
+    width: 50vw;
+    font-weight: bold;
+    
+}
+
+
+tr {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+    width: 11vw;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: var(--primary-color);
+    border: 2px var(--secondary-color) solid;
+}
+
+.box-btn{
+    width: 100%;
+    position: absolute;
+}
+.btn-enviar{
+    margin-top: 6vh;
+    background-color: var(--oppositeColor);
+    color: var(--primaryColor);
+    cursor: pointer;
+    width: 50vw;
+    height: 6vh;
+    font-weight: 500;
+}
+.btn-enviar:hover{
+    background-color: var(--secundaryColor);
+    transition: 0.5s;
+    color: var(--oppositeColor);
+    border: 1.8px solid var(--oppositeColor);
+}
+.btn-voltar{
+    /* left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 3vh;*/
+    cursor: pointer; 
+    width: 50vw;
+    top: 75vh;
+    height: 6vh;
+    font-weight: 500;
+    position: absolute;
+}
+.btn-voltar:hover{
+    background-color: var(--oppositeColor);
+    transition: 0.5s;
+    color: var(--primaryColor);
+    border: 1.8px solid var(--oppositeColor);
+}

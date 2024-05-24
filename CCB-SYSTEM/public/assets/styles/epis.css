@@ -1,0 +1,114 @@
+:root{
+    --primary-color: #ffffff;
+    --secondary-color: #efefef;
+    --opposite-color: #000000;
+    --search-color: #004FFF;
+    --modal-color: #adadad
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+
+
+header{
+    display: flex;
+    height: 8vh;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px var(--opposite-color) solid;
+}
+
+nav{
+    display: flex;
+    margin: 4px;
+}
+
+.main-title{
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+    width: 80%;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    /* margin-bottom: 5%; */
+}
+
+.main-title > h1 {
+    font-size: larger;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+form{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    gap: 3rem;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+div > label {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div > select{
+    padding: 0.5rem 1rem;
+    border: 1px var(--opposite-color) solid;
+}
+
+#div-button{
+    height: 10%;
+    width: 30%;
+}
+
+#button-update{
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+}
+
+#button-update:hover{
+    background-color: var(--primary-color);
+    color: var(--opposite-color);
+}
+
+#button-back{
+    background-color: var(--primary-color);
+    color: var(--opposite-color);
+    padding: 0.5rem 1rem;
+}
+
+#button-back:hover{
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+}
