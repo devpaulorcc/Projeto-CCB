@@ -17,19 +17,19 @@
         </nav>
     </header>
     <main>
-        <form class="main-form" method="post">
+        <?= form_open('login_submit') ?>
             <div class="main-form-title">
                 <h2>LOGIN</h2>
             </div>
             <div class="main-form-email">
                 <label for="email">EMAIL:</label>
-                <input class="main-form-input" id="email" type="email" placeholder="Digite seu email" required>
+                <input class="main-form-input" id="email" type="email" placeholder="Digite seu email" name="email">
             </div>
             <div class="main-form-password">
                 <label for="password">SENHA:</label>
-                <input class="main-form-input" id="password" type="password" placeholder="Digite sua senha" required>
+                <input class="main-form-input" id="password" type="password" placeholder="Digite sua senha" name="senha">
             </div>
             <input id="main-form-submit" type="submit" value="LOGAR">
-        </form>
+        <?= form_close() ?>
     </main>
 </body>

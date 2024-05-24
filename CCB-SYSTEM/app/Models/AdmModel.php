@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class AdmModel extends Model
 {
-    protected $table            = 'adms';
+    protected $table            = 'adm';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
@@ -21,7 +21,7 @@ class AdmModel extends Model
     protected array $castHandlers = [];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -43,4 +43,21 @@ class AdmModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function verificarADM($email, $senha)
+    {
+        $usuario = $this->where('email', $email)->first();
+        if($usuario){
+            // return $usuario;
+            if($this->where('senha', $senha)->first()){
+                return $usuario;
+            } else {
+                return false;
+            }
+            
+        } else {
+            return false;
+        }
+        
+    }
 }
