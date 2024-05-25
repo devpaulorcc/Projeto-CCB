@@ -8,7 +8,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Main extends BaseController
 {
-    public function index()
+    public function login()
     {
         return view('login');
     }
@@ -20,10 +20,20 @@ class Main extends BaseController
         $adm_model = new AdmModel();
         $resultado = $adm_model->verificarADM($email, $senha);
         if($resultado == true){
-            dd($resultado);
+            $dados = [
+                'id' => $resultado->id,
+                'email' => $resultado->email
+            ];
+            session()->set($dados);
+            return redirect()->to('main');
         } else {
-            echo 'Erro';
+            return redirect()->to('/');
         }
+    }
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
     }
     public function apis()
     {
