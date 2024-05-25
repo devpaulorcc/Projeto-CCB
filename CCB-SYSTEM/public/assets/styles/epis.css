@@ -25,8 +25,13 @@ header{
     display: flex;
     height: 8vh;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     border: 1px var(--opposite-color) solid;
+}
+
+header nav h1 {
+    font-weight: 100;
+    font-size: 20px;
 }
 
 nav{

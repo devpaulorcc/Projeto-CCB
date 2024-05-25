@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="<?= base_url('assets/styles/login.css') ?>">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <link rel="stylesheet" href="<?= base_url('assets/styles/header.css') ?>">
 </head>
 <body>
     <header>
         <nav>
-            <h1><i class="bi bi-house"></i></h1>
+            <h1>CCB</h1>
         </nav>
     </header>
     <main>

@@ -1,0 +1,23 @@
+header nav .icon-fixed{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.bi-house {
+    cursor: pointer;
+}
+
+header nav h1 {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+}

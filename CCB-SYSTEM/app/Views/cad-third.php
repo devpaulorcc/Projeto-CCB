@@ -6,11 +6,15 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="<?= base_url('assets/styles/padrao.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/styles/cad-third.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/styles/header.css') ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
-    <header>
-      <h1>CADASTRO</h1>
-      <h2>3/3</h2>
+  <header>
+        <nav class="header-container">
+          <h1>Cadastro  3/3</h1>
+            <a class="icon-fixed" href="<?= site_url('main')?>"><i class="bi bi-house"></i></a>
+        </nav>
     </header>
     <main>
       <div class="main-title">

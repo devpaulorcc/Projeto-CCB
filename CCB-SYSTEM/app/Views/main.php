@@ -6,16 +6,15 @@
     <title>Mainpage</title>
     <link rel="stylesheet" href="<?= base_url('assets/styles/padrao.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/styles/mainpage.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/styles/header.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <header>
         <nav class="header-container">
-            <h1>MAINPAGE</h1>
+          <h1>Main Page</h1>
+          <a href="<?= site_url('logout')?>" class="icon-fixed"><i class="bi bi-box-arrow-left"></i></a>
         </nav>
-        <div id="exit">
-            <a href="<?= site_url('logout')?>"><i class="bi bi-box-arrow-left"></i></a>
-        </div>
     </header>
     <main>
         <section class="first-content">

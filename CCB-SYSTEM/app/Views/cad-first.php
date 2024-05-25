@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/styles/padrao.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/styles/cad-first.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/styles/header.css') ?>">
 </head>
 <body>
     <header>
-        <h1>CADASTRO</h1>
-        <h2>1/3</h2>
+        <nav class="header-container">
+            <h1>Cadastro  1/3</h1>
+            <a class="icon-fixed" href="<?= site_url('main')?>"><i class="bi bi-house"></i></a>
+        </nav>
     </header>
     <main>
         <h1>INFORMAÇÕES PESSOAIS DO VOLUNTÁRIO</h1>
