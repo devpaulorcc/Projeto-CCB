@@ -20,7 +20,7 @@
       <div class="main-title">
           <h1>VIGÊNCIA DE CERTIFICAÇÃO E RECICLAGEM</h1>
       </div>
-      <form method="post">
+      <?=form_open("cadastroT")?>
       <table>
         <thead>
             <tr>
@@ -33,39 +33,41 @@
         <tbody>
             <tr>
                 <td>NR10</td>
-                <td><input type="date" id="nr10-data-inicio"></td>
-                <td><input type="date" id="nr10-data-vencimento"></td>
-                <td><input type="date" id="nr10-data-reciclagem"></td>
+                <td><input type="date" name="nr10-data-inicio" id="nr10-data-inicio"></td>
+                <td><input type="date" name="nr10-data-vencimento" id="nr10-data-vencimento"></td>
+                <td><input type="date" name="nr10-data-reciclagem" id="nr10-data-reciclagem"></td>
                 
             </tr>
             <tr>
                 <td>NR33</td>
-                <td><input type="date" id="nr33-data-inicio"></td>
-                <td><input type="date" id="nr33-data-vencimento"></td>
-                <td><input type="date" id="nr33-data-reciclagem"></td>
+                <td><input type="date" name="nr33-data-inicio" id="nr33-data-inicio"></td>
+                <td><input type="date" name="nr33-data-vencimento" id="nr33-data-vencimento"></td>
+                <td><input type="date" name="nr33-data-reciclagem" id="nr33-data-reciclagem"></td>
                 
             </tr>
             <tr>
                 <td>NR35</td>
-                <td><input type="date" id="nr35-data-inicio"></td>
-                <td><input type="date" id="nr35-data-vencimento"></td>
-                <td><input type="date" id="nr35-data-reciclagem"></td>
+                <td><input type="date" name="nr35-data-inicio" id="nr35-data-inicio"></td>
+                <td><input type="date" name="nr35-data-vencimento" id="nr35-data-vencimento"></td>
+                <td><input type="date" name="nr35-data-reciclagem" id="nr35-data-reciclagem"></td>
               
             </tr>
             <tr>
                 <td>ASO</td>
-                <td><input type="date" id="aso-data-inicio"></td>
-                <td><input type="date" id="aso-data-vencimento"></td>
-                <td><input type="date" id="aso-data-reciclagem"></td>
+                <td><input type="date" name="aso-data-inicio" id="aso-data-inicio"></td>
+                <td><input type="date" name="aso-data-vencimento" id="aso-data-vencimento"></td>
+                <td><input type="date" name="aso-data-reciclagem" id="aso-data-reciclagem"></td>
               
             </tr>
         </tbody>
     </table>
     <div class="box-btn">
     <input class="btn-enviar" type="submit" value="avançar">
-    </div>
-      </form>
-      <button class="btn-voltar">VOLTAR</button>
+  </div>
+
+  <?=form_close()?>
+  
+  <button class="btn-voltar">VOLTAR</button>
     </main>
   </body>
 </html>

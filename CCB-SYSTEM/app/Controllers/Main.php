@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\AdmModel;
+use App\Models\UsuarioModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Main extends BaseController
@@ -50,6 +51,118 @@ class Main extends BaseController
     public function cadThird()
     {
         return view('cad-third');
+    }
+
+    public function cadastroP(){
+
+       
+        $rg = $this->request->getPost('rg');
+        $dataNasc = $this->request->getPost('dataNasc');
+        $cep = $this->request->getPost('cep');
+        $numCasa = $this->request->getPost('numCasa');
+        $cidade = $this->request->getPost('cidade');
+        $nomeVolun = $this->request->getPost('nome');
+        $cttFixo = $this->request->getPost('ctt-fixo');
+        $rua = $this->request->getPost('endereco');
+        $nomeCongreg = $this->request->getPost('congregacao');
+        $gpTrabalho = $this->request->getPost('gpTrabalho');
+        $cttCelular = $this->request->getPost('ctt-celular');
+        $bairro = $this->request->getPost('bairro');
+        $ftPerfil = $this->request->getPost('ftperfil');
+
+        session()->set("rg", $rg);        
+        session()->set("dataNasc", $dataNasc);        
+        session()->set("cep", $cep);        
+        session()->set("numCasa", $numCasa);        
+        session()->set("cidade", $cidade);        
+        session()->set("nomeVolun", $nomeVolun);        
+        session()->set("cttFixo", $cttFixo);        
+        session()->set("rua", $rua);        
+        session()->set("nomeCongreg", $nomeCongreg);        
+        session()->set("gpTrabalho", $gpTrabalho);        
+        session()->set("cttCelular", $cttCelular);        
+        session()->set("bairro", $bairro);        
+        session()->set("ftPerfil", $ftPerfil);  
+
+        return redirect()->to("cadastro/segunda");
+    }
+
+    public function cadastroS(){
+
+        $formacaoAcad = $this->request->getPost("formacaoAcad");
+        $dispvolun1 = $this->request->getPost("dispvolun1");
+        $dispvolun2 = $this->request->getPost("dispvolun2");
+        $dispvolun3 = $this->request->getPost("dispvolun3");
+        $epiOculos = $this->request->getPost("epi-oculos");
+        $epiMascara = $this->request->getPost("epi-mascara");
+        $epiluva = $this->request->getPost("epi-luva");
+        $epiOculos = $this->request->getPost("epi-oculos");
+        $epibota = $this->request->getPost("epi-bota");
+        $epiAuricular = $this->request->getPost("epi-auricular");
+        $epiCinto = $this->request->getPost("epi-cinto");
+        $epiUniform = $this->request->getPost("epi-uniform");
+        
+        session()->set("formacaoAcad", $formacaoAcad);
+        session()->set("dispvolun1", $dispvolun1);
+        session()->set("dispvolun2", $dispvolun2);
+        session()->set("dispvolun3", $dispvolun3);
+        session()->set("epi-oculos", $epiOculos);
+        session()->set("epi-mascara", $epiMascara);
+        session()->set("epi-luva", $epiluva);
+        session()->set("epi-oculos", $epiOculos);
+        session()->set("epi-bota", $epibota);
+        session()->set("epi-auricular", $epiAuricular);
+        session()->set("epi-cinto", $epiCinto);
+        session()->set("epi-uniform", $epiUniform);
+        
+        return redirect()->to("cadastro/segunda/terceira");
+        
+    }
+
+    public function cadastroT(){
+
+        $nr10DataInicio = $this->request->getPost("nr10-data-inicio");
+        $nr10DataVencimento = $this->request->getPost("nr10-data-vencimento");
+        $nr10DataReciclagem = $this->request->getPost("nr10-data-reciclagem");
+        $nr33DataInicio = $this->request->getPost("nr33-data-inicio");
+        $nr33DataVencimento = $this->request->getPost("nr33-data-vencimento");
+        $nr33DataReciclagem = $this->request->getPost("nr33-data-reciclagem");
+        $nr35DataInicio = $this->request->getPost("nr35-data-inicio");
+        $nr35DataVencimento = $this->request->getPost("nr35-data-vencimento");
+        $nr35DataReciclagem = $this->request->getPost("nr35-data-reciclagem");
+        $asoDataInicio = $this->request->getPost("aso-data-inicio");
+        $asoDataVencimento = $this->request->getPost("aso-data-vencimento");
+        $asoDataReciclagem = $this->request->getPost("aso-data-reciclagem");
+
+        $formacaoAcad = session()->get("formacaoAcad");
+        $dispvolun1 = session()->get("dispvolun1");
+        $dispvolun2 = session()->get("dispvolun2");
+        $dispvolun3 = session()->get("dispvolun3");
+        $epiOculos = session()->get("epi-oculos");
+        $epiMascara = session()->get("epi-mascara");
+        $epiluva = session()->get("epi-luva");
+        $epiOculos = session()->get("epi-oculos");
+        $epibota = session()->get("epi-bota");
+        $epiAuricular = session()->get("epi-auricular");
+        $epiCinto = session()->get("epi-cinto");
+        $epiUniform = session()->get("epi-uniform");
+        
+        $rg = session()->get("rg");
+        $dataNasc = session()->get("dataNasc");
+        $cep = session()->get("cep");
+        $numCasa = session()->get("numCasa");
+        $cidade = session()->get("cidade");
+        $nomeVolun = session()->get("nomeVolun");
+        $cttFixo = session()->get("cttFixo");
+        $rua = session()->get("rua");
+        $nomeCongreg = session()->get("nomeCongreg");
+        $gpTrabalho = session()->get("gpTrabalho");
+        $cttCelular = session()->get("cttCelular");
+        $bairro = session()->get("bairro");
+        $ftPerfil = session()->get("ftPerfil");
+        
+        
+        return redirect()->to("cadastro/segunda/terceira");
     }
 
     public function certificate()

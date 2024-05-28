@@ -12,7 +12,17 @@ class UsuarioModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        "rg",
+        "nome",
+        "data_nasc",
+        "data_cad",
+        "cep",
+        "numero",
+        "caminho_foto",
+        "grupo_trabalho",
+        "formacao"
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -43,4 +53,29 @@ class UsuarioModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public $nome;
+    
+
+    public function CadastrarUser($rg, $dataNasc, $numCasa, $nomeVolun, $gpTrabalho, $ftPerfil){
+
+        $dados = [
+         "rg" => $rg,
+         "nomeVolun" => $nomeVolun,
+         "dataNasc" => $dataNasc,
+         "numero" => $numCasa,
+         "caminho_foto" => $ftPerfil,
+         "grupo_trabalho" => $gpTrabalho
+        ];
+
+        $retorno = $this->insert($dados);
+
+        if($retorno){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }

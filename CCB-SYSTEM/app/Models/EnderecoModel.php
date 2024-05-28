@@ -12,9 +12,15 @@ class EnderecoModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        "id_usuario",
+        "cep",
+        "rua",
+        "bairro",
+        "cidade"
+    ];
 
-    protected bool $allowEmptyInserts = false;
+    protected bool $allowEmptyInserts = true;
     protected bool $updateOnlyChanged = true;
 
     protected array $casts = [];
@@ -43,4 +49,25 @@ class EnderecoModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function CadastrarEnd($id_usuario, $cep, $rua, $bairro, $cidade){
+
+        $dados = [
+            "id_usuario" => $id_usuario,
+            "cep" => $cep,
+            "rua" => $rua,
+            "bairro" => $bairro,
+            "cidade" => $cidade
+        ];
+
+        $retorno = $this->insert($dados);
+
+        if($retorno){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 }

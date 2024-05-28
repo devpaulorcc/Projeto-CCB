@@ -17,7 +17,7 @@
         </nav>
     </header>
     <main>
-      <form method="post">
+        <?=form_open("cadastroS")?>
         <section class="container-box">
           <div class="dispvolun">
             <h1>DISPONIBILIDADE DO VOLUNTÁRIO</h1>
@@ -84,7 +84,7 @@
           </div>
         </section>
         <input class="btn-enviar" type="submit" value="AVANÇAR" />
-      </form>
+      <?=form_close()?>
       <button class="btn-voltar">VOLTAR</button>
     </main>
   </body>

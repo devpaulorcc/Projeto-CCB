@@ -13,9 +13,12 @@ $routes->get('apis', 'Main::apis');
 
 $routes->get('main', 'Main::main');
 
-$routes->get('cad-first', 'Main::cadFirst');
-$routes->get('cad-second', 'Main::cadSecond');
-$routes->get('cad-third', 'Main::cadThird');
+$routes->get('cadastro', 'Main::cadFirst');
+$routes->get('cadastro/segunda', 'Main::cadSecond');
+$routes->get('cadastro/segunda/terceira', 'Main::cadThird');
+$routes->post('cadastroP', 'Main::cadastroP');
+$routes->post('cadastroS', 'Main::cadastroS');
+$routes->post('cadastroT', 'Main::cadastroT');
 
 $routes->get('certificate', 'Main::certificate');
 $routes->get('consultInfo', 'Main::consultInfo');

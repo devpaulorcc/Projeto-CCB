@@ -18,7 +18,7 @@
     </header>
     <main>
         <h1>INFORMAÇÕES PESSOAIS DO VOLUNTÁRIO</h1>
-        <form method="post">
+        <?=form_open('cadastroP')?>
             <section class="container-box">
             <div class="container-inputs">
                 <label for="rg">RG</label>
@@ -60,7 +60,7 @@
             </div>
             <div class="container-inputs">
                 <label for="gruposDeTrabalho">GRUPO DE TRABALHO</label>
-                <select id="gruposDeTrabalho">
+                <select name="gpTrabalho" id="gruposDeTrabalho">
                     <option >MANUTENÇÃO</option>
                     <option >#</option>
                     <option >#</option>
@@ -80,7 +80,7 @@
             </div>
             </section>
             <input class="btn-enviar" type="submit" value="AVANÇAR" id="primeiro-cad">
-        </form>
+        <?=form_close()?>
             <button class="btn-voltar">VOLTAR</button>
     </main>
 </body>
