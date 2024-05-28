@@ -80,16 +80,17 @@ label{
 
 .container-num-cep{
     display: flex;
-    gap: 7vw;
+    gap: 8.35vw;
     flex-direction: row;
 }
 
 .container-num-cep-item{
     display: flex;
+    gap: 2vh;
     flex-direction: column;
 }
 .container-num-cep input{
-    width: 100px;
+    width: 90px;
 }
 
 
