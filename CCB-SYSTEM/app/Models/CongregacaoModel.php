@@ -6,13 +6,15 @@ use CodeIgniter\Model;
 
 class CongregacaoModel extends Model
 {
-    protected $table            = 'congregacaos';
+    protected $table            = 'congregacao';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id_usuarios', 'nome_congreg'
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -43,4 +45,23 @@ class CongregacaoModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function CadastrarCongre($nomeCongregacao){
+
+        $db = \Config\Database::connect();
+
+        $dados = [
+         "id_usuarios" => $db->insertID(),
+         "nome_congreg" => $nomeCongregacao
+        ];
+
+        $retorno = $this->insert($dados);
+
+        if($retorno){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

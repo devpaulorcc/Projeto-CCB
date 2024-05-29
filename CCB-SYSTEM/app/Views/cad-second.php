@@ -39,45 +39,45 @@
               <div class="epi-lacuna1">
                 <label for="epi-oculos">ÓCULOS DE PROTEÇÃO</label>
                 <select name="epi-oculos" id="epi-oculos">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
                 <label for="epi-mascara">MASCARA FILTRADORA</label>
                 <select name="epi-mascara" id="epi-mascara">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
                 <label for="epi-luva">LUVA DE RASPA</label>
                 <select name="epi-luva" id="epi-luva">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
                 <label for="epi-capacete">CAPACETE DE PROTEÇÃO</label>
-                <select name="epi-oculos" id="epi-capacete">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                <select name="epi-capacete" id="epi-capacete">
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
               </div>
               <div class="epi-lacuna2">
                 <label for="epi-bota">BOTA DE PROTEÇÃO</label>
                 <select name="epi-bota" id="epi-bota">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
                 <label for="epi-auricular">PROTETOR AURICULAR</label>
                 <select name="epi-auricular" id="epi-auricular">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
                 <label for="epi-cinto">CINTO DE SEGURANÇA</label>
                 <select name="epi-cinto" id="epi-cinto">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
                 <label for="epi-uniform">UNIFORME ESPECIAL</label>
                 <select name="epi-uniform" id="epi-uniform">
-                  <option value="1">NÃO</option>
-                  <option value="2">SIM</option>
+                  <option>NÃO</option>
+                  <option>SIM</option>
                 </select>
               </div>
             </div>

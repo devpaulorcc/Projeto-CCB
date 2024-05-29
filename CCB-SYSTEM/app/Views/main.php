@@ -21,7 +21,7 @@
             <h2>COMO VAMOS PROSSEGUIR?</h2>
         </section>
         <section class="second-content">
-            <a href="./cad-first.html">
+            <a href="<?= site_url('cadastro') ?>">
                 <div class="btn">
                     <img class="btn-img" src="<?= base_url('assets/img/cadastro.png') ?>" alt="Imagem botão cadastrar">
                     <h1>CADASTRAR VOLUNTÁRIO</h1>

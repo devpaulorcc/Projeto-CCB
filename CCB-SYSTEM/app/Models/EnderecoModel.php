@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class EnderecoModel extends Model
 {
-    protected $table            = 'enderecos';
+    protected $table            = 'endereco';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
@@ -50,10 +50,11 @@ class EnderecoModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function CadastrarEnd($id_usuario, $cep, $rua, $bairro, $cidade){
+    public function CadastrarEnd($cep, $rua, $bairro, $cidade){
 
+        $db = \Config\Database::connect();
         $dados = [
-            "id_usuario" => $id_usuario,
+            "id_usuario" => $db->insertID(),
             "cep" => $cep,
             "rua" => $rua,
             "bairro" => $bairro,

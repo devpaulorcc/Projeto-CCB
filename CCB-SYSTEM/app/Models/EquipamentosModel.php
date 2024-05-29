@@ -12,7 +12,10 @@ class EquipamentosModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id_usuarios', 'oculos_protecao', 'mascara', 'luva_de_raspa', 'bota', 'capacete',
+        'protetor_auricular', 'cinto_de_seguranca', 'uniforme_especial'
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -43,4 +46,30 @@ class EquipamentosModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function CadastrarEquip($oculos, $mascara, $luva, $bota, $capacete, $protetor, $cinto, $uniforme){
+
+        $db = \Config\Database::connect();
+
+        $dados = [
+         "id_usuarios" => $db->insertID(),
+         "oculos_protecao" => $oculos,
+         "mascara" => $mascara,
+         "luva_de_raspa" => $luva,
+         "bota" => $bota,
+         "capacete" => $capacete,
+         "protetor_auricular" => $protetor,
+         "cinto_de_seguranca" => $cinto,
+         "uniforme_especial" => $uniforme,
+        ];
+
+        $retorno = $this->insert($dados);
+
+        if($retorno){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

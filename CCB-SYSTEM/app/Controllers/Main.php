@@ -4,8 +4,17 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\AdmModel;
+use App\Models\AsoModel;
+use App\Models\CongregacaoModel;
+use App\Models\EnderecoModel;
+use App\Models\EquipamentosModel;
+use App\Models\Nr10Model;
+use App\Models\Nr33Model;
+use App\Models\Nr35Model;
+use App\Models\TelefoneModel;
 use App\Models\UsuarioModel;
 use CodeIgniter\HTTP\ResponseInterface;
+use Exception;
 
 class Main extends BaseController
 {
@@ -96,7 +105,7 @@ class Main extends BaseController
         $epiOculos = $this->request->getPost("epi-oculos");
         $epiMascara = $this->request->getPost("epi-mascara");
         $epiluva = $this->request->getPost("epi-luva");
-        $epiOculos = $this->request->getPost("epi-oculos");
+        $epiCap = $this->request->getPost("epi-capacete");
         $epibota = $this->request->getPost("epi-bota");
         $epiAuricular = $this->request->getPost("epi-auricular");
         $epiCinto = $this->request->getPost("epi-cinto");
@@ -109,7 +118,7 @@ class Main extends BaseController
         session()->set("epi-oculos", $epiOculos);
         session()->set("epi-mascara", $epiMascara);
         session()->set("epi-luva", $epiluva);
-        session()->set("epi-oculos", $epiOculos);
+        session()->set("epi-capacete", $epiCap);
         session()->set("epi-bota", $epibota);
         session()->set("epi-auricular", $epiAuricular);
         session()->set("epi-cinto", $epiCinto);
@@ -141,7 +150,7 @@ class Main extends BaseController
         $epiOculos = session()->get("epi-oculos");
         $epiMascara = session()->get("epi-mascara");
         $epiluva = session()->get("epi-luva");
-        $epiOculos = session()->get("epi-oculos");
+        $epiCap = session()->get("epi-capacete");
         $epibota = session()->get("epi-bota");
         $epiAuricular = session()->get("epi-auricular");
         $epiCinto = session()->get("epi-cinto");
@@ -153,7 +162,7 @@ class Main extends BaseController
         $numCasa = session()->get("numCasa");
         $cidade = session()->get("cidade");
         $nomeVolun = session()->get("nomeVolun");
-        $cttFixo = session()->get("cttFixo");
+        // $cttFixo = session()->get("cttFixo");
         $rua = session()->get("rua");
         $nomeCongreg = session()->get("nomeCongreg");
         $gpTrabalho = session()->get("gpTrabalho");
@@ -161,7 +170,60 @@ class Main extends BaseController
         $bairro = session()->get("bairro");
         $ftPerfil = session()->get("ftPerfil");
         
-        
+        try
+        {
+            $usuarioModel = new UsuarioModel();
+            $enderecoModel = new EnderecoModel();
+            $telefoneModel = new TelefoneModel();
+            $congregacaoModel = new CongregacaoModel();
+            $equipamentoModel = new EquipamentosModel();
+            $asoModel = new AsoModel();
+            $nr10Model = new Nr10Model();
+            $nr33Model = new Nr33Model();
+            $nr35Model = new Nr35Model();
+
+            $cadastroUsuario = $usuarioModel->CadastrarUser($rg,$dataNasc,$numCasa, $nomeVolun,$gpTrabalho, $ftPerfil, $formacaoAcad, $dispvolun1, $dispvolun2, $dispvolun3);
+            $cadastroEndereco = $enderecoModel->CadastrarEnd($cep, $rua, $bairro, $cidade);
+            $cadastroTelefone = $telefoneModel->CadastrarTel($cttCelular);
+            $cadastroCongregacao = $congregacaoModel->CadastrarCongre($nomeCongreg);
+            $cadastroEquipamentos = $equipamentoModel->CadastrarEquip($epiOculos, $epiMascara, $epiluva, $epibota, $epiCap, $epiAuricular, $epiCinto, $epiUniform);
+            $cadastroAso = $asoModel->CadastrarAso($asoDataInicio, $asoDataVencimento, $asoDataReciclagem);
+
+            $cadastroNr10 = $nr10Model->CadastrarNR10($nr10DataInicio, $nr10DataVencimento, $nr10DataReciclagem);
+            $cadastroNr33 = $nr33Model->CadastrarNR33($nr33DataInicio, $nr33DataVencimento, $nr33DataReciclagem);
+            $cadastroNr35 = $nr35Model->CadastrarNR35($nr35DataInicio, $nr35DataVencimento, $nr35DataReciclagem);
+
+            if($cadastroUsuario == true){
+                if($cadastroEndereco == true){
+                    if($cadastroTelefone == true){
+                        if($cadastroCongregacao == true){
+                            if($cadastroEquipamentos == true){
+                                if($cadastroAso == true){
+                                    if($cadastroNr10 == true){
+                                        if($cadastroNr10 == true){
+                                            if($cadastroNr33 == true){
+                                                if($cadastroNr35 == true){
+                                                    return redirect()->to('main');
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return redirect()->to('main');
+
+        } catch (Exception $error){
+            var_dump($error);
+            return redirect()->to("main");
+        }
+
+
+
         return redirect()->to("cadastro/segunda/terceira");
     }
 

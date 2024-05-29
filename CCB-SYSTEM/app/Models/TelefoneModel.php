@@ -6,13 +6,15 @@ use CodeIgniter\Model;
 
 class TelefoneModel extends Model
 {
-    protected $table            = 'telefones';
+    protected $table            = 'telefone';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id_usuarios','tel'
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -43,4 +45,22 @@ class TelefoneModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function CadastrarTel($celular){
+        $db = \Config\Database::connect();
+
+        $dados = [
+            'id_usuarios' => $db->insertID(),
+            'tel' => $celular
+        ];
+
+        $retorno = $this->insert($dados);
+
+        if($retorno){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

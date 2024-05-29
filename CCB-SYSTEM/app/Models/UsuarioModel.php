@@ -17,11 +17,13 @@ class UsuarioModel extends Model
         "nome",
         "data_nasc",
         "data_cad",
-        "cep",
         "numero",
         "caminho_foto",
         "grupo_trabalho",
-        "formacao"
+        "formacao",
+        "dispVolun1",
+        "dispVolun2",
+        "dispVolun3"
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -31,7 +33,7 @@ class UsuarioModel extends Model
     protected array $castHandlers = [];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -53,19 +55,24 @@ class UsuarioModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public $nome;
     
 
-    public function CadastrarUser($rg, $dataNasc, $numCasa, $nomeVolun, $gpTrabalho, $ftPerfil){
+    public function CadastrarUser($rg, $dataNasc, $numCasa, $nomeVolun, $gpTrabalho, $ftPerfil ,$formacaoAcad, $dispVolun1, $dispVolun2, $dispVolun3){
+
+        $dataAtual = date("Y-m-d");
 
         $dados = [
          "rg" => $rg,
-         "nomeVolun" => $nomeVolun,
-         "dataNasc" => $dataNasc,
+         "nome" => $nomeVolun,
+         "data_nasc" => $dataNasc,
+         "data_cad" => $dataAtual,
          "numero" => $numCasa,
          "caminho_foto" => $ftPerfil,
-         "grupo_trabalho" => $gpTrabalho
+         "grupo_trabalho" => $gpTrabalho,
+         "formacao" => $formacaoAcad,
+         "dispVolun1" => $dispVolun1,
+         "dispVolun2" => $dispVolun2,
+         "dispVolun3" => $dispVolun3
         ];
 
         $retorno = $this->insert($dados);
