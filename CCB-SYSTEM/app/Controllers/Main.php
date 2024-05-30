@@ -241,6 +241,21 @@ class Main extends BaseController
     }
     public function consultVolu()
     {
-        return view('volu-consult');
+        $usuarioModel = new UsuarioModel();
+        $resultado = $usuarioModel->findAll();
+        $data['users'] = $resultado;
+        return view('volu-consult', $data);
+    }
+    public function consultPesquisa()
+    {      
+        $usuarioModel = new UsuarioModel();
+        $pesquisa = $this->request->getPost('nomePesquisado');
+        $resultado = $usuarioModel->where('nome', $pesquisa)->findAll();
+        $data['users'] = $resultado;
+        if($data['users'] == null){
+            $error['error'] = 'Nenhum usuário encontrado.';
+            return view('errors/error_personalizado', $error);
+        }
+        return view('volu-consult', $data);
     }
 }

@@ -22,4 +22,7 @@ $routes->post('cadastroT', 'Main::cadastroT');
 
 $routes->get('certificate', 'Main::certificate');
 $routes->get('consultInfo', 'Main::consultInfo');
+
+
 $routes->get('consultVolu', 'Main::consultVolu');
+$routes->post('consultPesquisa', 'Main::consultPesquisa');

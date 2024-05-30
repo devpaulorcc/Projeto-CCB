@@ -28,7 +28,7 @@
                 </div>
             </a>
 
-            <a href="./infosconsult.html">
+            <a href="<?= site_url('consultVolu') ?>">
                 <div class="btn">
                     <img class="btn-img" src="<?= base_url('assets/img/pesquisa.png') ?>" alt="Imagem botão Consultar">
                     <h1>CONSULTAR VOLUNTÁRIO</h1>

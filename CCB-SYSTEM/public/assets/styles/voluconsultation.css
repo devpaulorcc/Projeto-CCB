@@ -104,6 +104,7 @@ main{
     border: 1px var(--opposite-color) solid;
     padding: 1rem 5rem;
     width: 28vw;
+    text-align: center;
 }
 
 .sec-volu-button{
@@ -113,4 +114,6 @@ main{
     border: 0;
     cursor: pointer;
     padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

@@ -62,39 +62,23 @@
             <h2>Consulta de voluntários</h2>
         </div>
         <div class="search-bar">
-            <a href="./mainpage.html"><button class="sec-volu-button"><i class="bi bi-box-arrow-left"></i> Sair</button></a>
-            <input class="search-bar-input" type="text" placeholder="Digite o nome do voluntário">
-            <button class="search-bar-button" id="search-event">Pesquisar</button>
+            <?= form_open('consultPesquisa') ?>
+            <input class="search-bar-input" type="text" placeholder="Digite o nome do voluntário" name="nomePesquisado">
+            <button class="search-bar-button" id="search-event" type="submit">Pesquisar</button>
+            <?= form_close() ?>
         </div>
         <section class="main-sec">
-            <div class="main-sec-volu">
-                <p class="sec-volu-name">Paulo Ricardo Cardoso de Camargo</p>
-                <button class="sec-volu-button">Visualizar</button>
-            </div>
-            <div class="main-sec-volu">
-                <p class="sec-volu-name">Alexandre Vieira Santana</p>
-                <button class="sec-volu-button">Visualizar</button>
-            </div>
-            <div class="main-sec-volu">
-                <p class="sec-volu-name">Marcos Costa do Java</p>
-                <button class="sec-volu-button">Visualizar</button>
-            </div>
-            <div class="main-sec-volu">
-                <p class="sec-volu-name">Nome completo do voluntário</p>
-                <button class="sec-volu-button">Visualizar</button>
-            </div>
-            <div class="main-sec-volu">
-                <p class="sec-volu-name">Nome completo do voluntário</p>
-                <button class="sec-volu-button">Visualizar</button>
-            </div>
-            <div class="main-sec-volu">
-                <p class="sec-volu-name">Nome completo do voluntário</p>
-                <button class="sec-volu-button">Visualizar</button>
-            </div>
-            <div class="main-sec-volu">
-                <p class="sec-volu-name">Nome completo do voluntário</p>
-                <button class="sec-volu-button">Visualizar</button>
-            </div>
+            <table>
+                <tbody>
+                    <?php foreach ($users as $user):?>
+                    <tr class="linha-consult">
+                        <p class="sec-volu-name"><?= $user->nome ?></p>
+                        <button class="sec-volu-button">Visualizar</button>
+                    </tr>
+                    <?php endforeach;?>
+                </tbody>
+            </table>
+            
         </section>
     </main>
 </body>
