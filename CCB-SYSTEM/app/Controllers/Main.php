@@ -242,9 +242,39 @@ class Main extends BaseController
     public function consultVolu()
     {
         $usuarioModel = new UsuarioModel();
-        $resultado = $usuarioModel->findAll();
+        $resultado = $usuarioModel->consultarUsers();
         $data['users'] = $resultado;
         return view('volu-consult', $data);
+    }
+    public function consultaComID($id)
+    {
+        $modelUsuario = new UsuarioModel();
+        $modelTelefone = new TelefoneModel();
+        $modelCongreg = new CongregacaoModel();
+        $modelEndereco = new EnderecoModel();
+        $resultadoEnde = $modelEndereco->buscarComID($id);
+        $resultadoUser = $modelUsuario->buscarComID($id);
+        $resultadoTel = $modelTelefone->buscarComID($id);
+        $resultadoCongreg = $modelCongreg->buscarComID($id);
+        $dados = [
+            'rg' => $resultadoUser->rg,
+            'endereco' => $resultadoEnde->rua,
+            // 'complemento' => $resultadoUser->complemento,
+            'data_nasc' => $resultadoUser->data_nasc,
+            'numeroEnde' => $resultadoUser->numero,
+            'nome' => $resultadoUser->nome,
+            'bairro' => $resultadoEnde->bairro,
+            'contato' => $resultadoTel->tipo_tel,
+            'nome_congreg' => $resultadoCongreg->nome_congreg,
+            'grupo' => $resultadoUser->grupo_trabalho,
+            'cep' => $resultadoEnde->cep,
+            'celular' => $resultadoTel->tel,
+            'formacao' => $resultadoUser->formacao,
+            'disp1' => $resultadoUser->dispVolun1,
+            'disp2' => $resultadoUser->dispVolun2,
+            'disp3' => $resultadoUser->dispVolun3
+        ];
+        return view('consult', $dados);
     }
     public function consultPesquisa()
     {      

@@ -25,4 +25,7 @@ $routes->get('consultInfo', 'Main::consultInfo');
 
 
 $routes->get('consultVolu', 'Main::consultVolu');
+
+$routes->get('consulta/(:num)', 'Main::consultaComID/$1');
+
 $routes->post('consultPesquisa', 'Main::consultPesquisa');

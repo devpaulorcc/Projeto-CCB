@@ -137,3 +137,9 @@ form{
     color: var(--primaryColor);
     border: 1.8px solid var(--oppositeColor);
 }
+
+a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}

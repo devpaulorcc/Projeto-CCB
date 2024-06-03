@@ -64,4 +64,13 @@ class CongregacaoModel extends Model
             return false;
         }
     }
+
+    public function buscarComID($id){
+        $resultado = $this->where('id_usuarios', $id)->first();
+        if($resultado != null){
+            return $resultado;
+        } else {
+            echo 'Erro ao achar usuário em nossa base de dados.';
+        }
+    }
 }

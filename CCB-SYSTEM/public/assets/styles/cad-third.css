@@ -132,3 +132,8 @@ input {
     color: var(--primaryColor);
     border: 1.8px solid var(--oppositeColor);
 }
+
+a{
+    width: 50%;
+    display: flex;
+}

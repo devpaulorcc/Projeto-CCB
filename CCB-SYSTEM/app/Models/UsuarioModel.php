@@ -85,4 +85,23 @@ class UsuarioModel extends Model
         }
     }
 
+    public function consultarUsers()
+    {
+        $pesquisa = $this->findAll();
+        if($pesquisa){
+            return $pesquisa;
+        } else {
+            return 'Houve um erro ao consultar todos os usuários';
+        }
+    }
+
+    public function buscarComID($id){
+        $resultado = $this->where('id', $id)->first();
+        if($resultado != null){
+            return $resultado;
+        } else {
+            echo 'Erro ao achar usuário em nossa base de dados.';
+        }
+    }
+
 }

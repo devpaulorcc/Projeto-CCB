@@ -85,7 +85,8 @@
         </section>
         <input class="btn-enviar" type="submit" value="AVANÇAR" />
       <?=form_close()?>
-      <button class="btn-voltar">VOLTAR</button>
+      <a href="<?= site_url('cadastro') ?>"><button class="btn-voltar">VOLTAR</button></a>
+      
     </main>
   </body>
 </html>

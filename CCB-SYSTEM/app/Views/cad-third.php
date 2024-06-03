@@ -67,7 +67,7 @@
 
   <?=form_close()?>
   
-  <button class="btn-voltar">VOLTAR</button>
+  <a href="<?= site_url('cadastro/segunda') ?>"><button class="btn-voltar">VOLTAR</button></a>
     </main>
   </body>
 </html>

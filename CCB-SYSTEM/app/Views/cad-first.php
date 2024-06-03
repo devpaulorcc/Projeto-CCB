@@ -81,7 +81,7 @@
             </section>
             <input class="btn-enviar" type="submit" value="AVANÇAR" id="primeiro-cad">
         <?=form_close()?>
-            <button class="btn-voltar">VOLTAR</button>
+            <a href="<?= site_url('main') ?>"><button class="btn-voltar">VOLTAR</button></a>
     </main>
 </body>
 </html>

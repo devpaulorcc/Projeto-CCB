@@ -71,4 +71,13 @@ class EnderecoModel extends Model
 
     }
 
+    public function buscarComID($id){
+        $resultado = $this->where('id_usuario', $id)->first();
+        if($resultado != null){
+            return $resultado;
+        } else {
+            echo 'Erro ao achar usuário em nossa base de dados.';
+        }
+    }
+
 }

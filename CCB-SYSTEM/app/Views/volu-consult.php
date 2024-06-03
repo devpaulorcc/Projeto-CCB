@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/styles/modal.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/styles/verification.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/styles/header.css') ?>">
+    <script src="<?= base_url('assets/js/modal.js') ?>" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -15,9 +16,11 @@
         <div id="modal-login-div" class="modal-login invisible">
             <section class="modal-info">
                 <div class="modal-info-person">
-                    <p>Nome voluntário</p>
-                    <p>RG</p>
-                    <p>Comum Congregação</p>
+                    <?php foreach($users as $user):?>
+                    <p><?= $user->nome ?></p>
+                    <p><?= $user->rg ?></p>
+                    <p><?= $user->numero ?></p>
+                    <?php endforeach;?>
                 </div>
                 <div class="modal-info-icon">
                     <img src="" alt="Foto de perfil">
@@ -73,7 +76,7 @@
                     <?php foreach ($users as $user):?>
                     <tr class="linha-consult">
                         <p class="sec-volu-name"><?= $user->nome ?></p>
-                        <button class="sec-volu-button">Visualizar</button>
+                        <a href="<?= site_url('consulta/'.$user->id) ?>"><button class="sec-volu-button" >Visualizar</button></a>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
