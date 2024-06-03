@@ -13,6 +13,7 @@ use App\Models\Nr33Model;
 use App\Models\Nr35Model;
 use App\Models\TelefoneModel;
 use App\Models\UsuarioModel;
+use CodeIgniter\Database\Exceptions\DatabaseException;
 use CodeIgniter\HTTP\ResponseInterface;
 use Exception;
 
@@ -257,9 +258,9 @@ class Main extends BaseController
         $resultadoTel = $modelTelefone->buscarComID($id);
         $resultadoCongreg = $modelCongreg->buscarComID($id);
         $dados = [
+            'id' => $resultadoUser->id,
             'rg' => $resultadoUser->rg,
             'endereco' => $resultadoEnde->rua,
-            // 'complemento' => $resultadoUser->complemento,
             'data_nasc' => $resultadoUser->data_nasc,
             'numeroEnde' => $resultadoUser->numero,
             'nome' => $resultadoUser->nome,
@@ -275,6 +276,57 @@ class Main extends BaseController
             'disp3' => $resultadoUser->dispVolun3
         ];
         return view('consult', $dados);
+    }
+    public function atualizandoDados()
+    {
+        $usuarioModel = new \App\Models\UsuarioModel();
+        $congregacaoModel = new \App\Models\CongregacaoModel();
+        $modelEndereco = new EnderecoModel();
+        $modelTelefone = new TelefoneModel();
+    
+        $id = $this->request->getPost('id');
+        $dados = [
+            'rg' => $this->request->getPost('rg'),
+            'nome' => $this->request->getPost('nome'),
+            'data_nasc' => $this->request->getPost('dataNasc'),
+            'numero' => $this->request->getPost('num'),
+            'caminho_foto' => $this->request->getPost('caminho_foto'),
+            'grupo_trabalho' => $this->request->getPost('gpTrabalho'),
+            'formacao' => $this->request->getPost('formAcad'),
+            'dispVolun1' => $this->request->getPost('disp1'),
+            'dispVolun2' => $this->request->getPost('disp2'),
+            'dispVolun3' => $this->request->getPost('disp3')
+        ];
+
+        $dadosCongreg = [
+            'id_usuarios' => $id,
+            'nome_congreg' => $this->request->getPost('nomeCongreg')
+        ];
+
+        $dadosEndereco = [
+            'id_usuario' => $id,
+            'cep' => $this->request->getPost('cep'),
+            'rua' => $this->request->getPost('end'),
+            'bairro' => $this->request->getPost('bairro')
+        ];
+
+        $dadosTelefone = [
+            'id_usuarios' => $id,
+            'tel' => $this->request->getPost('ctt-fixo')
+        ];
+    
+        try{
+            $usuarioModel->atualizarUser($id, $dados);
+            $congregacaoModel->atualizarCongre($dadosCongreg);
+            $modelEndereco->atualizarEndereco($dadosEndereco);
+            $modelTelefone->atualizarTelefone($dadosTelefone);
+        } catch (DatabaseException $error){
+            echo 'Erro! ' . $error;
+        }
+        return redirect()->to('consultVolu');
+
+
+    
     }
     public function consultPesquisa()
     {      

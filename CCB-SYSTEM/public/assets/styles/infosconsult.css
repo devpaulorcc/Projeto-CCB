@@ -126,11 +126,7 @@ img{
 
 /* Para uso do JAVASCRIPT */
 
-.info-input{
-    pointer-events: none;
-    outline: none;
-    /* text-indent: -9999px; */
-}
+
 
 .default{
     cursor: pointer;

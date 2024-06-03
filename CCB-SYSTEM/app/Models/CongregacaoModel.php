@@ -73,4 +73,11 @@ class CongregacaoModel extends Model
             echo 'Erro ao achar usuário em nossa base de dados.';
         }
     }
+
+    public function atualizarCongre($dados)
+    {
+        $id = $dados['id_usuarios'];
+        $resultado = $this->update($id,$dados);
+        return true;
+    }
 }

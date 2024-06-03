@@ -71,4 +71,11 @@ class TelefoneModel extends Model
             echo 'Erro ao achar usuário em nossa base de dados.';
         }
     }
+
+    public function atualizarTelefone($dados)
+    {
+        $id = $dados['id_usuarios'];
+        $this->update($id,$dados);
+        return true;
+    }
 }

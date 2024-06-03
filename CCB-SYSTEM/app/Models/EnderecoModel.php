@@ -80,4 +80,11 @@ class EnderecoModel extends Model
         }
     }
 
+    public function atualizarEndereco($dados)
+    {
+        $id = $dados['id_usuario'];
+        $this->update($id,$dados);
+        return true;
+    }
+
 }
