@@ -72,11 +72,13 @@
         </div>
         <section class="main-sec">
             <table>
-                <tbody>
+                <tbody class="itens-lista">
                     <?php foreach ($users as $user):?>
                     <tr class="linha-consult">
+                        <div class="row-line">
                         <p class="sec-volu-name"><?= $user->nome ?></p>
                         <a href="<?= site_url('consulta/'.$user->id) ?>"><button class="sec-volu-button" >Visualizar</button></a>
+                        </div>
                     </tr>
                     <?php endforeach;?>
                 </tbody>

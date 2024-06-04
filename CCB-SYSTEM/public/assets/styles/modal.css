@@ -13,7 +13,7 @@
     background-color: var(--opposite-color);
     z-index: 1;
     position: fixed;
-    opacity: 70%;
+    opacity: 10%;
 }
 
 button{
