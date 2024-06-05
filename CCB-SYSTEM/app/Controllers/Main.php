@@ -184,7 +184,7 @@ class Main extends BaseController
             $nr35Model = new Nr35Model();
 
             $cadastroUsuario = $usuarioModel->CadastrarUser($rg,$dataNasc,$numCasa, $nomeVolun,$gpTrabalho, $ftPerfil, $formacaoAcad, $dispvolun1, $dispvolun2, $dispvolun3);
-            $cadastroEndereco = $enderecoModel->CadastrarEnd($cep, $rua, $bairro, $cidade);
+            $cadastroEndereco = $enderecoModel->CadastrarEnd($cep, $rua, $bairro);
             $cadastroTelefone = $telefoneModel->CadastrarTel($cttCelular);
             $cadastroCongregacao = $congregacaoModel->CadastrarCongre($nomeCongreg);
             $cadastroEquipamentos = $equipamentoModel->CadastrarEquip($epiOculos, $epiMascara, $epiluva, $epibota, $epiCap, $epiAuricular, $epiCinto, $epiUniform);

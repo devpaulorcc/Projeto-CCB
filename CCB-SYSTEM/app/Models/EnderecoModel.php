@@ -50,15 +50,16 @@ class EnderecoModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function CadastrarEnd($cep, $rua, $bairro, $cidade){
+    public function CadastrarEnd($cep, $rua, $bairro){
 
         $db = \Config\Database::connect();
         $dados = [
+
             "id_usuario" => $db->insertID(),
             "cep" => $cep,
             "rua" => $rua,
-            "bairro" => $bairro,
-            "cidade" => $cidade
+            "bairro" => $bairro
+        
         ];
 
         $retorno = $this->insert($dados);
