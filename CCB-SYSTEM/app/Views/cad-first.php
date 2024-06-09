@@ -18,7 +18,7 @@
     </header>
     <main>
         <h1>INFORMAÇÕES PESSOAIS DO VOLUNTÁRIO</h1>
-        <?=form_open('cadastroP')?>
+        <?=form_open_multipart('cadastroP')?>
             <section class="container-box">
             <div class="container-inputs">
                 <label for="rg">RG</label>
@@ -47,18 +47,12 @@
                 <label for="nome">NOME VOLUNTÁRIO</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome">
                 
-                <label for="ctt-fixo">CONTATO FIXO</label>
-                <input type="tel" name="ctt-fixo" id="ctt-fixo" placeholder="Digite o telefone fixo">
-                
-                
                 <label for="rua">Rua</label>
                 <input type="text" name="endereco" id="rua" placeholder="Digite o nome da rua">
                 
                 <label for="congregacao">NOME DA CONGREGAÇÃO</label>
                 <input type="text" name="congregacao" id="congregacao" placeholder="Digite o nome da congregação">
                 
-            </div>
-            <div class="container-inputs">
                 <label for="gruposDeTrabalho">GRUPO DE TRABALHO</label>
                 <select name="gpTrabalho" id="gruposDeTrabalho">
                     <option >MANUTENÇÃO</option>
@@ -66,10 +60,10 @@
                     <option >#</option>
                     <option >#</option>
                 </select>
-                
-                
+            </div>
+            <div class="container-inputs">          
                 <label for="ctt-celular">CONTATO CELULAR</label>
-                <input type="tel" name="ctt-celular" id="ctt-celular">
+                <input type="tel" name="ctt-celular" id="ctt-celular" placeholder="Digite o número de celular">
                 
                 <label for="bairro">BAIRRO</label>
                 <input type="text" name="bairro" id="bairro" placeholder="Digite o bairro">

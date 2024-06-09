@@ -78,7 +78,9 @@ class Main extends BaseController
         $gpTrabalho = $this->request->getPost('gpTrabalho');
         $cttCelular = $this->request->getPost('ctt-celular');
         $bairro = $this->request->getPost('bairro');
-        $ftPerfil = $this->request->getPost('ftperfil');
+        $arquivo = $this->request->getFile('ftperfil');
+        $ftPerfil = $arquivo->getName();
+
 
         session()->set("rg", $rg);        
         session()->set("dataNasc", $dataNasc);        
@@ -93,7 +95,7 @@ class Main extends BaseController
         session()->set("cttCelular", $cttCelular);        
         session()->set("bairro", $bairro);        
         session()->set("ftPerfil", $ftPerfil);  
-
+        $arquivo->move(ROOTPATH.'public/assets/perfil');
         return redirect()->to("cadastro/segunda");
     }
 
@@ -161,7 +163,7 @@ class Main extends BaseController
         $dataNasc = session()->get("dataNasc");
         $cep = session()->get("cep");
         $numCasa = session()->get("numCasa");
-        $cidade = session()->get("cidade");
+        // $cidade = session()->get("cidade");
         $nomeVolun = session()->get("nomeVolun");
         // $cttFixo = session()->get("cttFixo");
         $rua = session()->get("rua");
@@ -170,6 +172,8 @@ class Main extends BaseController
         $cttCelular = session()->get("cttCelular");
         $bairro = session()->get("bairro");
         $ftPerfil = session()->get("ftPerfil");
+
+        
         
         try
         {
@@ -257,12 +261,17 @@ class Main extends BaseController
         $resultadoUser = $modelUsuario->buscarComID($id);
         $resultadoTel = $modelTelefone->buscarComID($id);
         $resultadoCongreg = $modelCongreg->buscarComID($id);
+        
+        $caminho = base_url('assets/perfil/' . $resultadoUser->caminho_foto);
+
+        $foto = $resultadoUser->caminho_foto;
         $dados = [
             'id' => $resultadoUser->id,
             'rg' => $resultadoUser->rg,
             'endereco' => $resultadoEnde->rua,
             'data_nasc' => $resultadoUser->data_nasc,
             'numeroEnde' => $resultadoUser->numero,
+            'foto' => $foto,
             'nome' => $resultadoUser->nome,
             'bairro' => $resultadoEnde->bairro,
             'contato' => $resultadoTel->tipo_tel,
@@ -290,7 +299,6 @@ class Main extends BaseController
             'nome' => $this->request->getPost('nome'),
             'data_nasc' => $this->request->getPost('dataNasc'),
             'numero' => $this->request->getPost('num'),
-            'caminho_foto' => $this->request->getPost('caminho_foto'),
             'grupo_trabalho' => $this->request->getPost('gpTrabalho'),
             'formacao' => $this->request->getPost('formAcad'),
             'dispVolun1' => $this->request->getPost('disp1'),

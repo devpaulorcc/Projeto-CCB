@@ -106,7 +106,7 @@ class UsuarioModel extends Model
 
     public function atualizarUser($id, $dados)
     {
-        $resultado = $this->update($id,$dados);
+        $this->update($id,$dados);
         return true;
     }
 

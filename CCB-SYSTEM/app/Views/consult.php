@@ -106,7 +106,7 @@
           </div>
           <div class="container-2">
             <div class="col4">
-              <img src="../img/exemplo-user.png" alt="foto de perfil" />
+              <img src="<?= base_url('assets/perfil/' . $foto) ?>" alt="foto de perfil" />
               <label for="disp1">Disponibilidade voluntário 1</label>
               <input type="text" name="disp1" id="disp1" class="default" value="<?= $disp1 ?>"/>
               <label for="disp2">Disponibilidade voluntário 2</label>
