@@ -29,3 +29,9 @@ Controle e gerenciamento de voluntários.
 - 🛠️ FIX - O arquivo foi concertado
 
 - 🕷️ BUG - O arquivo está apresentando bugs
+
+## Acesso por URL
+
+```bash
+  https://codecreators.shop
+```
